@@ -1,32 +1,50 @@
-function generateMarkdown(data) {
-  const licenseBadgified = data.license.replace(/-/g,'--');
-  return `# ${data.title}
+function generateMarkdown(answers, userData) {
+  const licenseBadgified = answers.license.replace(/-/g, "--");
+  console.log(userData);
+
+  return (
+    `# ${answers.title}
 ![badge](https://img.shields.io/badge/license-${licenseBadgified}-blue?style=for-the-badge)
-![badge](https://img.shields.io/github/languages/code-size/${data.userName}/${data.title}?style=for-the-badge)
-![badge](https://img.shields.io/github/languages/top/${data.userName}/${data.title}?style=for-the-badge)
-![badge](https://img.shields.io/github/last-commit/${data.userName}/${data.title}?style=for-the-badge)
-## Author: ${data.userName}
+
+## Author: 
+${answers.userName}
+
+<img src="${userData.avatar_url}" alt="Profile Pic" title="Profile Pic" width="150" />
+
+Email: <a href="mailto:${userData.email}">${userData.email}</a>
 
 ## Description:
-${data.description}
+${answers.description}
 
-## Installation instructions:
-${data.install}
+## Table of Contents:
+* [Installation](#installation)
+* [Usage](#isage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
+## Installation:
+${answers.install}
 
 ## Usage:
-${data.usage}
 
+` +
+    "\`" + answers.usage + "\`" +
+    `
 ## License:
-Released under the ${data.license} license. 
+Released under the ${answers.license} license. 
 
 ## Contributing:
-${data.contribute}
+${answers.contribute}
 
 ## Tests:
-${data.tests}
+${answers.tests}
 
-## Further questions:
-${data.questions}`;
+## Questions:
+${answers.questions}
+`
+  );
 }
 
 module.exports = generateMarkdown;
