@@ -1,6 +1,5 @@
 function generateMarkdown(answers, userData) {
   const licenseBadgified = answers.license.replace(/-/g, "--");
-  console.log(userData);
 
   return (
     `# ${answers.title}
