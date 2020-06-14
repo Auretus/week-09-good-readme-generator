@@ -55,7 +55,7 @@ const questions = [
     type: "editor",
     name: "tests",
     message: `Describe any test scripts you've written to validate your code, as well as how to run them.`,
-    default: `Tests? Who needs tests? It Just Works, right? <\/sarcasm>`,
+    default: `Tests? Who needs tests? It Just Works, right? \<\/sarcasm\>`,
   },
   {
     type: "input",
